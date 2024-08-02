@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= skincare_product.productName %> - Skincare Catalogue</title>
+
+    <style>
+      body {
+          background-color: #747474; 
+      }
+  </style>
+  
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Skincare Catalogue</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/addProduct">Add new product</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= skincare_product.productName %></h5>
+                        <img src="/images/<%= skincare_product.image %>" class="card-img-top" alt="<%= skincare_product.productName %>">
+                        <p class="card-text"><b>Brand:</b> <%= skincare_product.brand %></p>
+                        <p class="card-text"><b>Rating:</b> <%= skincare_product.averageRating %>/5</p>
+                        <p class="card-text"><b>Product Description:</b> <%= skincare_product.description %></p>
+                        <p class="card-text"><b>Product Type:</b>
+                            <span class="badge bg-<%= getProductTypeColor(skincare_product.productType) %>">
+                                <%= skincare_product.productType %>
+                            </span>
+                        </p>
+                        <a href="/" class="btn btn-dark btn-sm">Back</a>
+                        <a href="/editProduct/<%= skincare_product.productID %>" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="/deleteProduct/<%= skincare_product.productID %>" class="btn btn-danger btn-sm">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
