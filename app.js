@@ -36,7 +36,6 @@ const upload = multer({ storage: storage });
 // Create MySQL connection
 const connection = mysql.createConnection({
     host: 'mysql-boonshuang.alwaysdata.net',
-    port: 3307,
     user: '371279',
     password: 'Cc5s@HrV8!.KuFN',
     database: 'boonshuang_skincare_app_db'
