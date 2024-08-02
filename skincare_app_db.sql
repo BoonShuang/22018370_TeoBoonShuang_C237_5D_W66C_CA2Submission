@@ -1,4 +1,4 @@
-USE 'boonshuang_skincare_app_db'
+USE 'boonshuang_skincare_app_db';
 
 --
 -- Table structure for table `reviews`
